@@ -1,6 +1,7 @@
 'use strict';
 
 // Functions
+// Element creator
 function myCreateElement(tag, classNames, content){
     const element = document.createElement(tag);
     element.classList.add(...classNames);
@@ -8,12 +9,14 @@ function myCreateElement(tag, classNames, content){
     return element;
 }
 
+// Click handler
 function handlePlayClick () {
     // Clear existing grid
     board.innerHTML = '';
-
+    // Save wanted classes as an array
+    const classArray = ['cell', `cell${sideLength}`];
     // Grid creation
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= totalCells; i++) {
         const myCell = myCreateElement('div', classArray, i);
         // Cell event listener
         myCell.addEventListener('click', function() {
@@ -24,10 +27,32 @@ function handlePlayClick () {
     }
 }
 
-const board = document.querySelector('.board');
-const classArray = ['cell', 'cell10'];
-const playButtons = document.querySelectorAll('.play-btn');
+// Difficulty setter function
+function setDifficulty(side) {
+    sideLength = String(side);
+    totalCells = side * side;
+}
 
+// Variables
+const board = document.querySelector('.board');
+const playButtons = document.querySelectorAll('.play-btn');
+const difficultySelector = document.getElementById('difficulty');
+let sideLength = '9';
+let totalCells = 81;
+
+// Set grid size and cell number based on selected difficulty
+difficultySelector.addEventListener('change', function() {
+    const selectedDifficulty = this.value;
+    if (selectedDifficulty === 'easy') {
+        setDifficulty(7);
+    } else if (selectedDifficulty === 'medium') {
+        setDifficulty(9);
+    } else if (selectedDifficulty === 'hard') {
+        setDifficulty(10);
+    }
+});
+
+// Add event listeners to play buttons
 for (let j = 0; j < playButtons.length; j++) {
     playButtons[j].addEventListener('click', handlePlayClick);
 }

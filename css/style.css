@@ -22,11 +22,21 @@ body {
     flex-direction: column;
 }
 
-.play-btn {
-    padding: 3px 38px;
+.play-btn,
+#difficulty {
     border-radius: 5px;
     border: 1px solid gray;
- }
+    background-color: rgb(245, 243, 243);
+}
+
+.play-btn {
+    padding: 4px 38px;
+}
+
+
+#difficulty {
+    padding: 3px 80px 3px 0;
+}
 
 /* 
 ********
@@ -43,7 +53,8 @@ header h1 {
     font-weight: 700;
 }
 
-header .button-box button {
+.play-btn,
+#difficulty {
     font-size: 1rem;
 }
 
@@ -117,4 +128,18 @@ main {
 .cell10 {
     width: calc(100% / 10);
     height: calc(100% / 10);
+}
+
+.cell9 {
+    width: calc(100% / 9);
+    height: calc(100% / 9);    
+}
+
+.cell7 {
+    width: calc(100% / 7);
+    height: calc(100% / 7);    
+}
+
+main p {
+    padding: 10px;
 }
