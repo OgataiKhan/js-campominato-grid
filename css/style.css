@@ -22,11 +22,6 @@ body {
     flex-direction: column;
 }
 
-main {
-    background-color: burlywood;
-    flex-grow: 1;
-}
-
 /* 
 ********
 TYPOGRAPHY
@@ -91,3 +86,30 @@ footer {
 MAIN
 ********
 */
+
+main {
+    background-color: #7FFFD4;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    background-color: lightgray;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.cell {
+    background-color: #7FFFD4;
+    border: 1px solid black;
+}
+
+.cell10 {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
