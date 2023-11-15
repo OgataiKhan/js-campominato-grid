@@ -119,6 +119,9 @@ main {
 .cell {
     background-color: #7FFFD4;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cell-clicked {
