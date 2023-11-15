@@ -109,6 +109,10 @@ main {
     border: 1px solid black;
 }
 
+.cell-clicked {
+    background-color: #003153;
+}
+
 .cell10 {
     width: calc(100% / 10);
     height: calc(100% / 10);
