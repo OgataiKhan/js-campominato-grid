@@ -44,11 +44,11 @@ let totalCells = 81;
 difficultySelector.addEventListener('change', function() {
     const selectedDifficulty = this.value;
     if (selectedDifficulty === 'easy') {
-        setDifficulty(7);
+        setDifficulty(10);
     } else if (selectedDifficulty === 'medium') {
         setDifficulty(9);
     } else if (selectedDifficulty === 'hard') {
-        setDifficulty(10);
+        setDifficulty(7);
     }
 });
 
