@@ -9,8 +9,14 @@ function myCreateElement(tag, classNames, content){
     return element;
 }
 
-// Click handler
-function handlePlayClick () {
+// Game functionality
+function handleCellClick(cell, index) {
+    console.log(index);
+    cell.classList.add('cell-clicked');
+}
+
+// Play click handler
+function handlePlayClick() {
     // Clear existing grid
     board.innerHTML = '';
     // Save wanted classes as an array
@@ -20,12 +26,12 @@ function handlePlayClick () {
         const myCell = myCreateElement('div', classArray, i);
         // Cell event listener
         myCell.addEventListener('click', function() {
-        console.log(i);
-        this.classList.add('cell-clicked');
+            handleCellClick(this, i);
         });
         board.append(myCell);
     }
 }
+
 
 // Difficulty setter function
 function setDifficulty(side) {
