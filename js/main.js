@@ -43,12 +43,16 @@ let totalCells = 81;
 // Set grid size and cell number based on selected difficulty
 difficultySelector.addEventListener('change', function() {
     const selectedDifficulty = this.value;
-    if (selectedDifficulty === 'easy') {
-        setDifficulty(10);
-    } else if (selectedDifficulty === 'medium') {
-        setDifficulty(9);
-    } else if (selectedDifficulty === 'hard') {
-        setDifficulty(7);
+    switch (selectedDifficulty) {
+        case 'easy':
+            setDifficulty(10);
+            break;
+        case 'hard':
+            setDifficulty(7);
+            break;
+        case 'medium':
+        default:
+            setDifficulty(9);
     }
 });
 
