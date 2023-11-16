@@ -1,6 +1,6 @@
 'use strict';
 
-// Functions
+// FUNCTIONS
 // Element creator
 function myCreateElement(tag, classNames, content){
     const element = document.createElement(tag);
@@ -21,6 +21,8 @@ function handlePlayClick() {
     board.innerHTML = '';
     // Save wanted classes as an array
     const classArray = ['cell', `cell${sideLength}`];
+    // Fragment
+    const fragment = document.createDocumentFragment();
     // Grid creation
     for (let i = 1; i <= totalCells; i++) {
         const myCell = myCreateElement('div', classArray, i);
@@ -28,24 +30,27 @@ function handlePlayClick() {
         myCell.addEventListener('click', function() {
             handleCellClick(this, i);
         });
-        board.append(myCell);
+        // Append cell to fragment
+        fragment.appendChild(myCell);
     }
+    // Append the whole fragment to the board
+    board.appendChild(fragment);
 }
 
-
-// Difficulty setter function
+// Difficulty setter
 function setDifficulty(side) {
     sideLength = String(side);
     totalCells = side * side;
 }
 
-// Variables
+// VARIABLES
 const board = document.querySelector('.board');
 const playButtons = document.querySelectorAll('.play-btn');
 const difficultySelector = document.getElementById('difficulty');
 let sideLength = '9';
 let totalCells = 81;
 
+// EXECUTION
 // Set grid size and cell number based on selected difficulty
 difficultySelector.addEventListener('change', function() {
     const selectedDifficulty = this.value;
@@ -59,6 +64,7 @@ difficultySelector.addEventListener('change', function() {
         case 'medium':
         default:
             setDifficulty(9);
+            break;
     }
 });
 
