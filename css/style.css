@@ -124,6 +124,11 @@ main {
     align-items: center;
 }
 
+.cell:hover {
+    filter: brightness(0.8);
+    cursor: pointer;
+}
+
 .cell-clicked {
     background-color: #003153;
     color: white;
