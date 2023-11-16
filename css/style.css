@@ -126,6 +126,7 @@ main {
 
 .cell-clicked {
     background-color: #003153;
+    color: white;
 }
 
 .cell10 {
